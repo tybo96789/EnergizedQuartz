@@ -16,6 +16,7 @@ import tybo96789.energizedquartz.blocks.Machine;
 import tybo96789.energizedquartz.energy.EQ_Energy;
 import tybo96789.energizedquartz.energy.EnergyNet;
 import tybo96789.energizedquartz.energy.EnergyPacket;
+import tybo96789.energizedquartz.helpers.TileEnergyChecker;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -35,7 +36,7 @@ public class TileEnergy extends TileEntity
     
     private Block blk;
     
-    private TileEnergy lastUsed = null; //RM
+    private TileEnergy lastUsed = null; //TODO Remove Statement
     
     private ForgeDirection lastChecked;
     
@@ -59,17 +60,17 @@ public class TileEnergy extends TileEntity
     {
     	
     	
-		this.up = getTileVoltageUp(this);
+		this.up = TileEnergyChecker.getTileVoltageUp(this);
 
-		this.down = getTileVoltageDown(this);
+		this.down = TileEnergyChecker.getTileVoltageDown(this);
 
-    	this.north = getTileVoltageNorth(this);
+    	this.north = TileEnergyChecker.getTileVoltageNorth(this);
 
-    	this.south = getTileVoltageSouth(this);
+    	this.south = TileEnergyChecker.getTileVoltageSouth(this);
 
-    	this.east = getTileVoltageEast(this);
+    	this.east = TileEnergyChecker.getTileVoltageEast(this);
 
-    	this.west = getTileVoltageWest(this);
+    	this.west = TileEnergyChecker.getTileVoltageWest(this);
         
         this.updateSidesArray(up, down, north, south, east, west);
 
@@ -134,131 +135,23 @@ public class TileEnergy extends TileEntity
     
     public void tickTile()
     {
-		this.up = getTileVoltageUp(this);
+		this.up = TileEnergyChecker.getTileVoltageUp(this);
 
-		this.down = getTileVoltageDown(this);
+		this.down = TileEnergyChecker.getTileVoltageDown(this);
 
-    	this.north = getTileVoltageNorth(this);
+    	this.north = TileEnergyChecker.getTileVoltageNorth(this);
 
-    	this.south = getTileVoltageSouth(this);
+    	this.south = TileEnergyChecker.getTileVoltageSouth(this);
 
-    	this.east = getTileVoltageEast(this);
+    	this.east = TileEnergyChecker.getTileVoltageEast(this);
 
-    	this.west = getTileVoltageWest(this);
+    	this.west = TileEnergyChecker.getTileVoltageWest(this);
         
         this.updateSidesArray(up, down, north, south, east, west);
     }
     
 
-    public static TileEnergy getTileVoltageUp(TileEntity tile)
-    {
-    	TileEntity up =  tile.worldObj.getBlockTileEntity(tile.xCoord, tile.yCoord + 1, tile.zCoord);
-    	
-    	TileEnergy temp = null;
-    	
-    	if(up != null){
-	        if (up instanceof TileEnergy)
-	        {
-	            temp = (TileEnergy) up;
-	        }
-	        else
-	        {
-	            return null;
-	        }
-    	}
-    	return temp;
-    }
-    public static TileEnergy getTileVoltageDown(TileEntity tile)
-    {
-    	TileEntity down =  tile.worldObj.getBlockTileEntity(tile.xCoord, tile.yCoord - 1, tile.zCoord);
-    	
-    	TileEnergy temp = null;
-    	
-    	if(down != null){
-	        if (down instanceof TileEnergy)
-	        {
-	            temp = (TileEnergy) down;
-	        }
-	        else
-	        {
-	            return null;
-	        }
-    	}
-    	return temp;
-    }
-    public static TileEnergy getTileVoltageNorth(TileEntity tile)
-    {
-    	TileEntity north = tile.worldObj.getBlockTileEntity(tile.xCoord + 1, tile.yCoord, tile.zCoord);
-    	
-    	TileEnergy temp = null;
-    	
-    	if(north != null){
-	        if (north instanceof TileEnergy)
-	        {
-	            temp = (TileEnergy) north;
-	        }
-	        else
-	        {
-	            return null;
-	        }
-    	}
-    	return temp;
-    }
-    public static TileEnergy getTileVoltageSouth(TileEntity tile)
-    {
-    	TileEntity south =  tile.worldObj.getBlockTileEntity(tile.xCoord - 1, tile.yCoord, tile.zCoord);
-    	
-    	TileEnergy temp = null;
-    	
-    	if(south != null){
-	        if (south instanceof TileEnergy)
-	        {
-	            temp = (TileEnergy) south;
-	        }
-	        else
-	        {
-	            return null;
-	        }
-	        
-    	}
-    	return temp;
-    }
-    public static TileEnergy getTileVoltageEast(TileEntity tile)
-    {
-    	TileEntity east = tile.worldObj.getBlockTileEntity(tile.xCoord, tile.yCoord, tile.zCoord + 1);
-    	
-    	TileEnergy temp = null;
-    	
-    	if(east != null){
-	        if (east instanceof TileEnergy)
-	        {
-	            temp = (TileEnergy) east;
-	        }
-	        else
-	        {
-	            return null;
-	        }
-    	}
-    	return temp;
-    }
-    public static TileEnergy getTileVoltageWest(TileEntity tile)
-    {
-    	TileEntity west = tile.worldObj.getBlockTileEntity(tile.xCoord, tile.yCoord, tile.zCoord - 1);
-    	
-    	TileEnergy temp = null;
-    	
-    	if(west != null){
-	        if (west instanceof TileEnergy)
-	        {
-	            temp = (TileEnergy) west;
-	        }
-	        else
-	        {
-	            return null;
-	        }
-    	}
-    	return temp;
-    }
+
     
     /*
      * This updates the SidesArray 
@@ -276,44 +169,6 @@ public class TileEnergy extends TileEntity
     public EnergyNet getEnergyNet()
     {
     	return this.eNetData;
-    }
-    /*
-     * This method is suppose to detect Changes in the Enet and if it has Changes then call for a network mapping update
-     * This method is currently broken :P
-     */
-    @Deprecated
-    private void updateSides()
-    {
-    	if(this.up != getTileVoltageUp(this))
-    	{
-    		eNetChange = true;
-    		this.up = getTileVoltageUp(this);
-    	}
-    	if(this.down != getTileVoltageDown(this))
-    	{
-    		eNetChange = true;
-    		this.down = getTileVoltageDown(this);
-    	}
-        if(this.north != getTileVoltageNorth(this))
-        {
-        	eNetChange = true;
-        	this.north = getTileVoltageNorth(this);
-        }
-        if(this.south != getTileVoltageSouth(this))
-        {
-        	eNetChange = true;
-        	this.south = getTileVoltageSouth(this);
-        }
-        if(this.east != getTileVoltageEast(this))
-        {
-        	eNetChange = true;
-        	this.east = getTileVoltageEast(this);
-        }
-        if(this.west != getTileVoltageWest(this))
-        {
-        	eNetChange = true;
-        	this.west = getTileVoltageWest(this);
-        }
     }
     
     public TileEnergy getIntanceTile()
