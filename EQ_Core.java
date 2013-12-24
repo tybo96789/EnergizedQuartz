@@ -29,6 +29,7 @@ import tybo96789.energizedquartz.items.LeadIngot;
 import tybo96789.energizedquartz.ores.OreLead;
 import tybo96789.energizedquartz.ores.OreUranium;
 import tybo96789.energizedquartz.tiles.TileCable;
+import tybo96789.energizedquartz.tiles.TileControllerExtender;
 import tybo96789.energizedquartz.tiles.TileCrystalOscillator;
 import tybo96789.energizedquartz.tiles.TileEnergy;
 import tybo96789.energizedquartz.tiles.TileGenerator;
@@ -310,6 +311,7 @@ public class EQ_Core
     	GameRegistry.registerTileEntity(TileGenerator.class,  modid + "TileGenerator");
     	GameRegistry.registerTileEntity(TileLight.class,  modid + "TileLight");
     	GameRegistry.registerTileEntity(TileSolarPanel.class, modid +  "TileSolarPanel");
+    	GameRegistry.registerTileEntity(TileControllerExtender.class, "TileControllerExtender");
     	top.log(Level.INFO, "Tiles Registered");
     }
 }
