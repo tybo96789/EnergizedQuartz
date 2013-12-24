@@ -8,6 +8,11 @@ import tybo96789.energizedquartz.tiles.TileEnergy;
 
 public class TileEnergyChecker {
 	
+	public static TileEnergy[] getSides(TileEnergy tile)
+	{
+		return new TileEnergy[] {getTileVoltageUp(tile), getTileVoltageDown(tile), getTileVoltageNorth(tile), getTileVoltageSouth(tile), getTileVoltageEast(tile), getTileVoltageWest(tile)};
+	}
+	
     public static TileEnergy getTileVoltageUp(TileEntity tile)
     {
     	TileEntity up =  tile.worldObj.getBlockTileEntity(tile.xCoord, tile.yCoord + 1, tile.zCoord);

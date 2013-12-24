@@ -58,21 +58,7 @@ public class TileEnergy extends TileEntity
     @Override
     public void updateEntity()
     {
-    	
-    	
-		this.up = TileEnergyChecker.getTileVoltageUp(this);
-
-		this.down = TileEnergyChecker.getTileVoltageDown(this);
-
-    	this.north = TileEnergyChecker.getTileVoltageNorth(this);
-
-    	this.south = TileEnergyChecker.getTileVoltageSouth(this);
-
-    	this.east = TileEnergyChecker.getTileVoltageEast(this);
-
-    	this.west = TileEnergyChecker.getTileVoltageWest(this);
-        
-        this.updateSidesArray(up, down, north, south, east, west);
+    	this.tileSides = TileEnergyChecker.getSides(this);
 
         if (updateTimer <= 0 || forcedUpdate)
         {
@@ -135,30 +121,11 @@ public class TileEnergy extends TileEntity
     
     public void tickTile()
     {
-		this.up = TileEnergyChecker.getTileVoltageUp(this);
-
-		this.down = TileEnergyChecker.getTileVoltageDown(this);
-
-    	this.north = TileEnergyChecker.getTileVoltageNorth(this);
-
-    	this.south = TileEnergyChecker.getTileVoltageSouth(this);
-
-    	this.east = TileEnergyChecker.getTileVoltageEast(this);
-
-    	this.west = TileEnergyChecker.getTileVoltageWest(this);
-        
-        this.updateSidesArray(up, down, north, south, east, west);
+    	this.tileSides = TileEnergyChecker.getSides(this);
     }
     
 
     
-    /*
-     * This updates the SidesArray 
-     */
-    public void updateSidesArray(TileEnergy up, TileEnergy down ,TileEnergy north ,TileEnergy south ,TileEnergy east ,TileEnergy west)
-    {
-    	tileSides = new TileEnergy[] {up,down,north,south,east,west};
-    }
     
     public TileEnergy[] getTileSides()
     {
