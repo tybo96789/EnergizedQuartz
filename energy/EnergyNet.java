@@ -13,7 +13,7 @@ import tybo96789.energizedquartz.tiles.TileEnergy;
 
 
 //TODO Code Cleanup
-public class EnergyNet implements Comparable {
+public class EnergyNet {
 	
 	private ArrayList<TileEnergy> net, existingNet, sources = new ArrayList<TileEnergy>(), receptors = new ArrayList<TileEnergy>();
 	
@@ -689,12 +689,6 @@ public class EnergyNet implements Comparable {
 				new EnergyPacket(src,recept);
 			}
 		}
-	}
-
-	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 }
