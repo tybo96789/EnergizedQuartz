@@ -7,7 +7,9 @@ import tybo96789.energizedquartz.tiles.TileEnergy;
  */
 
 public class TileEnergyChecker {
-	
+	/*
+	 * This method takes an instance of a tileenergy and checks adjacent blocks to see if its a instance of tile energy if it is store to TileEnergy[] and return
+	 */
 	public static TileEnergy[] getSides(TileEnergy tile)
 	{
 		return new TileEnergy[] {getTileVoltageUp(tile), getTileVoltageDown(tile), getTileVoltageNorth(tile), getTileVoltageSouth(tile), getTileVoltageEast(tile), getTileVoltageWest(tile)};
