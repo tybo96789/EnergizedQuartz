@@ -1,4 +1,4 @@
-package tybo96789.energizedquartz.helpers;
+package tybo96789.energizedquartz.energy;
 
 import net.minecraft.tileentity.TileEntity;
 import tybo96789.energizedquartz.tiles.TileEnergy;

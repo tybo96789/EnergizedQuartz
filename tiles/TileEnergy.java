@@ -16,7 +16,7 @@ import tybo96789.energizedquartz.blocks.Machine;
 import tybo96789.energizedquartz.energy.EQ_Energy;
 import tybo96789.energizedquartz.energy.EnergyNet;
 import tybo96789.energizedquartz.energy.EnergyPacket;
-import tybo96789.energizedquartz.helpers.TileEnergyChecker;
+import tybo96789.energizedquartz.energy.TileEnergyChecker;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -150,7 +150,6 @@ public class TileEnergy extends TileEntity
         this.updateSidesArray(up, down, north, south, east, west);
     }
     
-
 
     
     /*
