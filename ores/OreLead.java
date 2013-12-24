@@ -9,6 +9,9 @@ import tybo96789.energizedquartz.helpers.BlockHelper;
 
 public class OreLead extends BlockHelper {
 
+	/*
+	 * Ore lead will be used in nuclear based path of energy
+	 */
 	public OreLead(int par1, Material par2Material) {
 		super(par1, par2Material);
 		this.setUnlocalizedName("Lead Ore");

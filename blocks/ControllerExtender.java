@@ -25,11 +25,16 @@ public class ControllerExtender extends BlockContainer implements ITextured {
 		}
 
 	@Override
-	public TileEntity createNewTileEntity(World world) {
+	public TileEntity createNewTileEntity(World world) { //TODO Add functionality to block 
 		//return new TileControllerExtender(this);
 		Top.log(Level.WARNING, "This Block has No Functionailty yet");
 		return null;
 	}
+	/*
+	 * On Call it will trigger a forced update to energynet and the controller extender
+	 * (non-Javadoc)
+	 * @see net.minecraft.block.Block#onNeighborBlockChange(net.minecraft.world.World, int, int, int, int)
+	 */
 	
     @Override
 	public void onNeighborBlockChange(World world, int x, int y, int z, int blockID)

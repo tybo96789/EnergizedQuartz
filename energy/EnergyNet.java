@@ -25,7 +25,7 @@ public class EnergyNet {
 	
 	private int nextUpdate = 600;
 	
-	public static int numOfControl = 0;
+	public static int numOfControl = 0; //TODO remove Debug statement
 	
 	private int numID = 0; //Used for debug purposes
 	
@@ -34,7 +34,7 @@ public class EnergyNet {
 	@Deprecated //Marked for removal
 	public EnergyNet(TileEnergy[] sides, TileEnergy self)
 	{
-		this.numID = numOfControl;
+		this.numID = numOfControl; //TODO remove debug statement
 		
 		System.out.println("Creating a new Energy Net!");
 		
@@ -219,7 +219,7 @@ public class EnergyNet {
 	 * This version of heatMap works well except they only can map straight lines
 	 * NOTE: There is a offset of 6 -----FIXED------
 	 * WARNING: ANYTHING THAT IS A TILEENTITY WILL CAUSE AN CRASH THAT IS IN THE DIRECT LINE OF SIGHT OF THE CONTROLLER ****FIXED**** 11/24/13 @10:26PM HST
-	 * 
+	 * TODO Rewrite so energynet can be mapped on all sides no matter where it is at
 	 */
 	public static ArrayList<TileEnergy> heatMap(TileEnergy controller)
 	{

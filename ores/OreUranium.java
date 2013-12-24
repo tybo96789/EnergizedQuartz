@@ -10,6 +10,9 @@ import net.minecraft.client.renderer.texture.IconRegister;
 
 public class OreUranium extends BlockHelper {
 
+	/*
+	 * Ore lead that is used for future implementation of nuclear energy
+	 */
 	public OreUranium(int par1, Material par2Material) {
 		super(par1, par2Material);
 		this.setUnlocalizedName("Uranium Ore");

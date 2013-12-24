@@ -9,6 +9,9 @@ import tybo96789.energizedquartz.helpers.ItemHelper;
 
 public class LeadIngot extends ItemHelper implements ITexturedItem {
 
+	/*
+	 * Ingot result of smelting the lead ore
+	 */
 	public LeadIngot(int par1) {
 		super(par1);
 		this.setUnlocalizedName("Lead Ingot");

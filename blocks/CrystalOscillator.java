@@ -38,14 +38,19 @@ public class CrystalOscillator extends BlockContainer implements ITextured{
     public void onBlockDestroyedByPlayer(World par1World, int par2, int par3, int par4, int par5)
     {
     	//EnergyNet.forceUpdate();
-    	EnergyNet.numOfControl--;
+    	EnergyNet.numOfControl--; //TODO Remove Debug Statement
     }
     @Override
     public void onBlockAdded(World par1World, int par2, int par3, int par4)
     {
     	//EnergyNet.forceUpdate();
-    	EnergyNet.numOfControl++;
+    	EnergyNet.numOfControl++; //TODO remove dubug statement
     }
+    /*
+     * Calling this will trigger an update cycle to energynet
+     * (non-Javadoc)
+     * @see net.minecraft.block.Block#onNeighborBlockChange(net.minecraft.world.World, int, int, int, int)
+     */
     @Override
 	public void onNeighborBlockChange(World world, int x, int y, int z, int blockID)
 	{
