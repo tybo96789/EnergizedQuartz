@@ -31,56 +31,10 @@ public class EnergyNet {
 	
 	private static boolean forcedUpdate = false; //Defined Globally to force update of the energynet 
 	
-	@Deprecated //Marked for removal
-	public EnergyNet(TileEnergy[] sides, TileEnergy self)
-	{
-		this.numID = numOfControl; //TODO remove debug statement
-		
-		System.out.println("Creating a new Energy Net!");
-		
-		this.controller = self;
-		
-		if(sides != null && self != null)
-		{
-			for(TileEnergy i : sides)
-			{
-				if(i != null)
-				{
-					if(i.getEnergyNet() != null)
-					{
-						if(i.getEnergyNet().isConnectedToNet())
-						{
-							this.existingNet =  i.getEnergyNet().getEnergyNetArray();
-							
-							System.out.println("Merging networks!");
-							
-							this.net = new ArrayList<TileEnergy>();
-							this.net = heatMap(self);
-							
-							this.net = mergeENet(this.existingNet, this.net);
-							
-							System.out.println("Network Size: "+ this.getENetSize());
-						}
-						else
-						{
-							addSelfToNetwork(self);
-						}
-					}
-				}
-			}
-		}
-	}
-	
 	public EnergyNet(TileEnergy tile)
 	{
 		this.controller = tile;
 		addSelfToNetwork(this.controller);
-	}
-	
-	@Deprecated //Marking for Removal
-	public EnergyNet(ArrayList<TileEnergy> existingNet)
-	{
-		this.net = existingNet;
 	}
 	
 	public void update()

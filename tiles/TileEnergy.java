@@ -106,15 +106,15 @@ public class TileEnergy extends TileEntity
     
     private boolean init()
     {
-    	isSource = this.blk instanceof Generator;
+    	this.isSource = this.blk instanceof Generator;
     	
-    	isReceptor = this.blk instanceof Machine;
+    	this.isReceptor = this.blk instanceof Machine;
 
-    	isLine = this.blk instanceof Cable;
+    	this.isLine = this.blk instanceof Cable;
     	
-    	isController = this.blk instanceof CrystalOscillator;
+    	this.isController = this.blk instanceof CrystalOscillator;
     	
-    	isExtender = this.blk instanceof ControllerExtender;
+    	this.isExtender = this.blk instanceof ControllerExtender;
     	
     	return true;
     }
