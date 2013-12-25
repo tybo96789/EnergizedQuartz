@@ -6,6 +6,8 @@ import tybo96789.energizedquartz.tiles.TileEnergy;
  * THIS CLASS HOLDS STATIC METHODS THAT WILL CHECK IF AN NEARBY BLOCK IS AN INSTANCE OF TILEENERGY IF IT IS RETURN THAT INSTANCE
  */
 
+//TODO Check if getTileVoltage public modifier is needed
+
 public class TileEnergyChecker {
 	/*
 	 * This method takes an instance of a tileenergy and checks adjacent blocks to see if its a instance of tile energy if it is store to TileEnergy[] and return

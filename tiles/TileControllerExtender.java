@@ -23,8 +23,6 @@ public class TileControllerExtender extends TileEnergy {
 	
 	private ArrayList<TileEnergy> enet;
 	
-	
-
 	public TileControllerExtender(ControllerExtender block) {
 		super(block);
 		init();

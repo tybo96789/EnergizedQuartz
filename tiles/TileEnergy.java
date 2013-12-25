@@ -124,8 +124,6 @@ public class TileEnergy extends TileEntity
     	this.tileSides = TileEnergyChecker.getSides(this);
     }
     
-
-    
     
     public TileEnergy[] getTileSides()
     {
