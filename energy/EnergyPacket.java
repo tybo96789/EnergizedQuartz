@@ -22,7 +22,7 @@ public class EnergyPacket {
 		this.receptor = des;
 		this.source.packet(this.getEnergyPacket());
 		this.receptor.packet(this.getEnergyPacket());
-		this.blk = src.getBlockType(); 
+		this.blk = src.getBlockType(); //TODO Check possible server crash usage
 	}
 
 	public TileEnergy getSource() {
