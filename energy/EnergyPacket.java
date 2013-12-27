@@ -26,7 +26,7 @@ public class EnergyPacket {
 	}
 
 	public TileEnergy getSource() {
-		return source;
+		return this.source;
 	}
 
 	public void setSource(TileEnergy source) {
@@ -34,7 +34,7 @@ public class EnergyPacket {
 	}
 
 	public TileEnergy getReceptor() {
-		return receptor;
+		return this.receptor;
 	}
 
 	public void setReceptor(TileEnergy receptor) {
@@ -48,18 +48,19 @@ public class EnergyPacket {
 	
 	public Block getBlock()
 	{
-		return blk;
+		return this.blk;
 	}
 	
 	public double getEnergy()
 	{
-		return energy;
+		return this.energy;
 	}
 	public void setEnergy(double amt)
 	{
 		this.energy = amt;
 	}
 	
+	@Deprecated
 	public boolean transferEnergy(ArrayList<TileEnergy> net)
 	{
 		return true;
