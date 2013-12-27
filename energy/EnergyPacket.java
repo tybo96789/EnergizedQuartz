@@ -22,7 +22,7 @@ public class EnergyPacket {
 		this.receptor = des;
 		this.source.packet(this.getEnergyPacket());
 		this.receptor.packet(this.getEnergyPacket());
-		this.blk = src.blockType;
+		this.blk = src.getBlockType(); 
 	}
 
 	public TileEnergy getSource() {
@@ -60,6 +60,7 @@ public class EnergyPacket {
 		this.energy = amt;
 	}
 	
+	//TODO Check Usage
 	@Deprecated
 	public boolean transferEnergy(ArrayList<TileEnergy> net)
 	{
