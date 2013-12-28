@@ -27,6 +27,7 @@ public final class OreDicHelper {
 		OreDictionary.registerOre("energizedDiamond", EQ_Core.energizedDiamond);
 		OreDictionary.registerOre("wrenchEnergized",EQ_Core.energizedWrench);
 		OreDictionary.registerOre("ingotLead", EQ_Core.leadIngot);
+		OreDictionary.registerOre("oreCinnabar", EQ_Core.oreCinnabar);
 		Top.log(Level.INFO, "Done Adding stuff to Ore Dictionary");
 		return true;
 	}

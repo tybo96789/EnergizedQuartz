@@ -8,17 +8,13 @@ import tybo96789.energizedquartz.EQ_Core;
 import tybo96789.energizedquartz.helpers.BlockHelper;
 import tybo96789.energizedquartz.helpers.ITextured;
 
-public class OreLead extends BlockHelper implements ITextured {
+public class OreCinnabar extends BlockHelper implements ITextured {
 
-	/*
-	 * Ore lead will be used in nuclear based path of energy
-	 */
-	public OreLead(int par1, Material par2Material) {
+	public OreCinnabar(int par1, Material par2Material) {
 		super(par1, par2Material);
-		this.setUnlocalizedName("Lead Ore");
-		this.setHardness(8);
+		this.setUnlocalizedName("Cinnabar Ore");
+		this.setHardness(6);
 		this.setCreativeTab(EQ_Core.tabCustom);
-		// TODO Auto-generated constructor stub
 	}
 	
     @SideOnly(Side.CLIENT)

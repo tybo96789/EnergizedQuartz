@@ -26,6 +26,7 @@ import tybo96789.energizedquartz.items.EnergizedQuartz;
 import tybo96789.energizedquartz.items.EnergizedRedstone;
 import tybo96789.energizedquartz.items.EnergizedWrench;
 import tybo96789.energizedquartz.items.LeadIngot;
+import tybo96789.energizedquartz.ores.OreCinnabar;
 import tybo96789.energizedquartz.ores.OreLead;
 import tybo96789.energizedquartz.ores.OreUranium;
 import tybo96789.energizedquartz.tiles.TileCable;
@@ -75,6 +76,7 @@ public class EQ_Core
     public static Block denceGlass;
     public static Block containmentGlass;
     public static Block controllerExtender;
+    public static Block oreCinnabar;
 
     public static final int CableID = 501;
     public static final int GeneratorID = 502;
@@ -88,6 +90,7 @@ public class EQ_Core
     public static final int denceGlassID = 510;
     public static final int containmentGlassID = 511;
     public static final int controllerExtenderID = 512;
+    public static final int oreCinnabarID = 513;
     
     
     public static Item energizedRedstone;
@@ -201,6 +204,10 @@ public class EQ_Core
         controllerExtender = new ControllerExtender(controllerExtenderID, Material.rock);
         GameRegistry.registerBlock(controllerExtender, modid + controllerExtender.getUnlocalizedName());
         LanguageRegistry.addName(controllerExtender, "Controller Extender");
+        
+        oreCinnabar = new OreCinnabar(oreCinnabarID,Material.rock);
+        GameRegistry.registerBlock(oreCinnabar, modid + oreCinnabar.getUnlocalizedName());
+        LanguageRegistry.addName(oreCinnabar, "Cinnabar Ore");
         
         top.log(Level.INFO, "Blocks Loaded");
     }
