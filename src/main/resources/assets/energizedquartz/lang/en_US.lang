@@ -1,0 +1,7 @@
+item.itemName.name=Item Name
+tile.blockName.name=Block Name
+itemGroup.creativeTabName=Creative Tab Name
+tile.tileEntityName.name=Tile Entity Name
+entity.entityName.name=Entity Name
+# Pound signs can be used as comments!
+tile.oreAluminum.name=Aluminum Ore
